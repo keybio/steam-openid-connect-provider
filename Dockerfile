@@ -13,5 +13,5 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
 WORKDIR /app
 COPY --from=publish /app .
 
-HEALTHCHECK CMD curl --fail http://localhost/health || exit 1
+HEALTHCHECK CMD curl --fail http://localhost:8090/health || exit 1
 ENTRYPOINT ["dotnet", "SteamOpenIdConnectProvider.dll"]
